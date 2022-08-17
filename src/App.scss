@@ -1,0 +1,192 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+
+$main-color: #ff6b45;
+$se-color: #1d2d44;
+$back-color: #fff;
+
+body {
+    font-family: 'Montserrat', sans-serif;
+
+}
+a {
+    text-decoration: none;
+    color: $se-color;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px;
+    box-shadow: 1px 2px 20px -14px;
+
+    img {
+        width: 200px;
+    }
+    ul {
+        font-weight: 700;
+        list-style: none;
+        display: flex;
+        gap: 40px;
+        font-size: 18px;
+        color: $se-color;
+    }
+}
+.home-banner {
+    background: url('../public/images/home-banner.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 92vh;
+    color:  $back-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    .banner-text {
+        text-align: center;
+        margin-top: 100px;
+    }
+    h1 {
+        font-size: 90px;
+        font-weight: bold;
+        text-shadow: 1px 3px 1px $main-color;
+    }
+    p {
+        font-size: 40px;
+        font-weight: 700;
+        text-shadow: 1px 3px 1px $se-color;
+    }
+    button {
+        margin-top: auto;
+        margin-bottom: 200px;
+        padding: 20px;
+        font-size: 16px;
+        color: $back-color;
+        background-color: $main-color;
+        border: none;
+        font-weight: bold;
+        border-radius: 4px;
+        transition: background-color 0.27s ease-out;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $back-color;
+            color: $main-color;
+        }
+    }
+}
+.items-grid {
+    margin-block: 50px;
+    width: 70vw;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+.item-card {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 10px;
+    color: $se-color;
+    transition: color 0.2s ease-out;
+    cursor: pointer;
+    img {
+        width: 250px;
+    }
+    h3 {
+        font-weight: bold;
+        font-size: 18px;
+    }
+    &:hover {
+        color: $main-color;
+    }
+}
+.item-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $se-color;
+    img {
+        width: 700px;
+    }
+    .spec-info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    h1 {
+        font-size: 50px;
+        font-weight: 700;
+    }
+    h3 {
+        font-size: 26px;
+        color: $main-color;
+    }
+    ul {
+        list-style: none;
+        li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-block: 16px ;
+            img {
+                width: 20px;
+            }
+        }
+    }
+    button {
+        padding: 10px;
+        font-size: 14px;
+        color: $back-color;
+        background-color: $main-color;
+        border: none;
+        font-weight: bold;
+        border-radius: 4px;
+        transition: background-color 0.27s ease-out;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $se-color;
+        }
+    }
+    input {
+        width: 40px;
+        height: 24px;
+        outline: none;
+        padding: 6px;
+        border: 1px solid $se-color;
+        color: $se-color;
+        font-size: 16px;
+        border-radius: 4px;
+    }
+}
+
