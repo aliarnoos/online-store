@@ -47,6 +47,12 @@ nav ul {
   font-size: 18px;
   color: #1d2d44;
 }
+nav ul a {
+  transition: color 0.2s ease-out;
+}
+nav ul a:hover {
+  color: #ff6b45;
+}
 
 .home-banner {
   background: url("../public/images/home-banner.webp");
@@ -126,13 +132,19 @@ nav ul {
 }
 
 .item-info {
+  margin-top: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #1d2d44;
 }
-.item-info img {
-  width: 700px;
+.item-info .laptop-img {
+  width: 500px;
+  margin: 30px;
+  transition: transform 1s;
+}
+.item-info .laptop-img:hover {
+  transform: scale(1.1);
 }
 .item-info .spec-info {
   display: flex;
@@ -155,7 +167,7 @@ nav ul {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-block: 16px;
+  margin-block: 24px;
 }
 .item-info ul li img {
   width: 20px;
@@ -183,4 +195,102 @@ nav ul {
   color: #1d2d44;
   font-size: 16px;
   border-radius: 4px;
+}
+
+.basket-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  background-color: #ff6b45;
+  border-radius: 50%;
+  padding: 10px;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  box-shadow: 3px 4px 20px -8px;
+  cursor: pointer;
+}
+.basket-btn img {
+  width: 30px;
+}
+.basket-btn span {
+  width: 16px;
+  text-align: center;
+  padding: 2px;
+  border-radius: 80%;
+  font-size: 16px;
+}
+
+.basket-items {
+  margin-top: 100px;
+}
+.basket-items table {
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+}
+.basket-items table tr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.basket-items table th {
+  border-bottom: 2px solid #1d2d44;
+  font-size: 20px;
+  font-weight: bold;
+  width: 140px;
+  height: 1px;
+  padding: 20px;
+  padding-block: 40px;
+}
+.basket-items table td {
+  width: 140px;
+  height: 70px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.basket-items table td img {
+  width: 100px;
+  margin: 4px;
+}
+.basket-items table td button {
+  border: none;
+  background-color: transparent;
+}
+.basket-items table td button img {
+  width: 30px;
+  cursor: pointer;
+  opacity: 0.9;
+}
+.basket-items table input {
+  width: 70px;
+  height: 20px;
+  outline: none;
+  padding: 6px;
+  border: 1px solid #1d2d44;
+  color: #1d2d44;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.cart {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 100px;
+}
+.cart .cart-total {
+  padding: 20px;
+  border-radius: 4px;
+}
+.cart .cart-total h2 {
+  margin-block: 30px;
+}
+.cart .cart-total h1 {
+  font-size: 18px;
+  font-weight: bold;
 }/*# sourceMappingURL=App.css.map */

@@ -1,37 +1,36 @@
 import React from "react";
-import NavBar from "./NavBar";
+import BasketBtn from "./Basket/BasketBtn";
 
 function ItemINfo(props) {
   return (
     <>
-      <NavBar />
       <div className="item-info">
-        <img src={props.img} alt="laptop pic" />
+        <img src={props.item.img} alt="laptop pic" className="laptop-img" />
         <div className="spec-info">
-          <h1>{props.name}</h1>
-          <h3>{props.price}</h3>
+          <h1>{props.item.name}</h1>
+          <h3>{props.item.price}</h3>
           <ul>
             <li>
               <img src="/images/cpu-icon.svg" alt="icon" />
-              <span></span>
+              <span>{props.item.cpu}</span>
             </li>
             <li>
               <img src="/images/gc-icon.svg" alt="icon" />
-              <span></span>
+              <span>{props.item.gpu}</span>
             </li>
             <li>
               <img src="/images/storage-icon.svg" alt="icon" />
-              <span></span>
+              <span>{props.item.storage}</span>
             </li>
             <li>
               <img src="/images/screen-icon.svg" alt="icon" />
-              <span></span>
+              <span>{props.item.display}</span>
             </li>
           </ul>
-          <input type="number" />
-          <button>Add to cart</button>
+          <button onClick={props.item.addItem}>Add to cart</button>
         </div>
       </div>
+      <BasketBtn />
     </>
   );
 }

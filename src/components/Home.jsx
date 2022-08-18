@@ -1,11 +1,9 @@
 import React from "react";
-import NavBar from "./NavBar";
 import { Link } from "react-router-dom";
 
 function Home() {
   return (
     <>
-      <NavBar />
       <div className="home-banner">
         <div className="banner-text">
           <h1>Welcome To Our Store</h1>

@@ -37,17 +37,7 @@ export const data = [
     img:
       'https://cdn.shopify.com/s/files/1/0228/7629/1136/products/ROGZephyrusDuo15_7_2000x.png?v=1586789904',
   },
-  {
-    id: generateId(),
-    name: 'GX531GX-ES047R',
-    gpu: rtxGpu1,
-    cpu: intel7Cpu8,
-    display: displayMd,
-    storage: '1TB M.2 NVMe™ PCIe® 3.0 x4 SSD (HyperDrive)',
-    price: '$2,199',
-    img:
-      'https://dlcdnwebimgs.asus.com/gain/C5B7C2B1-A0AB-4FFB-ACE9-D6B007E34504',
-  },
+
   {
     id: generateId(),
     name: 'GX531GXR-ES012R',
@@ -321,5 +311,16 @@ export const data = [
     price: '$1,499',
     img:
       'https://asset.msi.com/resize/image/global/product/product_8_20200319093839_5e72cd1f6d8a0.png62405b38c58fe0f07fcef2367d8a9ba1/1024.png',
+  },
+  {
+    id: generateId(),
+    name: 'GX531GX-ES047R',
+    gpu: rtxGpu1,
+    cpu: intel7Cpu8,
+    display: displayMd,
+    storage: '1TB M.2 NVMe™ PCIe® 3.0 x4 SSD (HyperDrive)',
+    price: '$2,199',
+    img:
+      'https://dlcdnwebimgs.asus.com/gain/C5B7C2B1-A0AB-4FFB-ACE9-D6B007E34504',
   },
 ]
