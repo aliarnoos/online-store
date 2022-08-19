@@ -5,7 +5,7 @@ function BasketBtn(props) {
   return (
     <Link to="/Basket">
       <div className="basket-btn">
-        <img src="/images/basket-icon.svg" alt="basket" />
+        <img src="/images/cart-icon.png" alt="basket" />
         <span>{props.basketCount}</span>
       </div>
     </Link>

@@ -224,7 +224,9 @@ nav {
         text-align: center;
         padding: 2px;
         border-radius: 80%;
-        font-size: 16px
+        font-size: 16px;
+        color: $back-color;
+
     }
 }
 .basket-items {
@@ -285,16 +287,34 @@ nav {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    gap: 100px;
+    gap: 20px;
     .cart-total {
         padding: 20px;
         border-radius: 4px;
-        h2 {
-            margin-block: 30px;
-        }
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 220px;
         h1 {
             font-size: 18px;
             font-weight: bold;
+        }
+        button {
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px;
+            color: $back-color;
+            background-color: $main-color;
+            border: none;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: background-color 0.27s ease-out;
+            margin: 10px;
+            cursor: pointer;
+            &:hover {
+                background-color: $se-color;
+            }
         }
     }
 }

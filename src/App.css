@@ -221,6 +221,7 @@ nav ul a:hover {
   padding: 2px;
   border-radius: 80%;
   font-size: 16px;
+  color: #fff;
 }
 
 .basket-items {
@@ -281,16 +282,34 @@ nav ul a:hover {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  gap: 100px;
+  gap: 20px;
 }
 .cart .cart-total {
   padding: 20px;
   border-radius: 4px;
-}
-.cart .cart-total h2 {
-  margin-block: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 220px;
 }
 .cart .cart-total h1 {
   font-size: 18px;
   font-weight: bold;
+}
+.cart .cart-total button {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  color: #fff;
+  background-color: #ff6b45;
+  border: none;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background-color 0.27s ease-out;
+  margin: 10px;
+  cursor: pointer;
+}
+.cart .cart-total button:hover {
+  background-color: #1d2d44;
 }/*# sourceMappingURL=App.css.map */

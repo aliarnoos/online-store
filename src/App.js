@@ -49,36 +49,47 @@ function handleDel(id) {
 
   useEffect(()=> {
     basketItems()
+    sumTotal()
   }, [cart])
 
-  const basketItems = () => cart.map((item) => {
-    return (
-      <BasketItem
-        name={item.name}
-        img={item.img}
-        price={item.price}
-        key={item.id}
-        id={item.id}
-        handleDel={item.handleDel}
-      />
-    );
-  });
-
-
   const addItem = (itemId) => {
-    // console.log(cart.length)
-    //  const check = () => cart.find(ele => ele.id===itemId ) ?????????????????????
-    //  console.log(check===true)
+     const check = () => cart.find(item => item[0].id===itemId ) 
+    //  console.log(check)
     const item = data.filter(el => el.id === itemId) 
-      setCart(current => [...current, { 
+    if(cart.filter(el => el.id === itemId)===true) return
+      setCart(current => 
+        [...current, { 
         img: item[0].img,
         name: item[0].name,
         price: item[0].price,
         id: item[0].id,
         handleDel: ()=> handleDel(item[0].id)
      }])
-
-
+     console.log(cart)
+}
+const basketItems = () => cart.map((item) => {
+  return (
+    <BasketItem
+      name={item.name}
+      img={item.img}
+      price={item.price}
+      key={item.id}
+      id={item.id}
+      handleDel={item.handleDel}
+      total={sumTotal}
+    />
+  );
+});
+ const [finalTotal, setFinalTotal] = useState()
+const sumTotal = () => {
+  let total = 0
+  cart.map((item) => {
+    let price = parseInt(item.price.replace(/\W+/g, ''))
+    let quant = document.querySelector(`.${item.id}`) || 1;
+    if(document.querySelector(`.${item.id}`)) total += price* quant.value
+    else total += price * quant
+  })
+  setFinalTotal('$'+ total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')) 
 }
   return (
     <>
@@ -89,7 +100,7 @@ function handleDel(id) {
           <Route path="/Shop" exact element={<Shop shopItems={shopItems}  />} />
           <Route path="/About" exact element={<Shop />} />
           <Route path="/ItemInfo/:id" exact element={<ItemINfo item={itemInfo}/>} />
-          <Route path="/Basket" exact element={<Basket  basketItems={basketItems}/>} />
+          <Route path="/Basket" exact element={<Basket  basketItems={basketItems} total={sumTotal} finalTotal={finalTotal}/>} />
         </Routes>
         <BasketBtn basketCount={cart.length} />
       </BrowserRouter>

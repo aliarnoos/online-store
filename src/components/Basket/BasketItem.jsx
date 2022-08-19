@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 function BasketItem(props) {
   const [subTotal, setSubTotal] = useState(props.price);
-
   const subTotalSum = () => {
     const quant = document.querySelector(`.${props.id}`);
-    let price = parseInt(props.price.replace(/\W+/g, ""));
-    let total = (quant.value * price)
+    let itemPrice = parseInt(props.price.replace(/\W+/g, ""));
+    let total = (quant.value * itemPrice)
       .toString()
       .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     setSubTotal("$" + total);
+    return total;
   };
   return (
     <tr>
@@ -25,7 +25,8 @@ function BasketItem(props) {
           type="number"
           defaultValue={1}
           className={props.id}
-          onChange={props.subTotalSum}
+          onChange={subTotalSum}
+          onClick={props.total}
           min={1}
           max={10}
         />

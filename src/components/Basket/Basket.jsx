@@ -5,7 +5,7 @@ function Basket(props) {
   useEffect(() => {
     setBasket(props.basketItems);
   }, [props.basketItems]);
-
+  const shipping = 20;
   return (
     <div className="cart">
       <div className="basket-items">
@@ -23,9 +23,8 @@ function Basket(props) {
         </table>
       </div>
       <div className="cart-total">
-        <h2>Total:{}</h2>
-        <h2>Shipping ${}</h2>
-        <h1>Cart Totoal:{}</h1>
+        <h1>Cart Totoal: {props.finalTotal}</h1>
+        <button>Checkout</button>
       </div>
     </div>
   );
