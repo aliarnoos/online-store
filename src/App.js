@@ -14,11 +14,7 @@ import BasketItem from "./components/Basket/BasketItem";
 
 
 function App() {
-  const [cart, setCart] = useState([])
 
-function handleDel(id) {
-  setCart(current => [...current.filter((el) => el.id !== id)])
-}
 
   const [itemInfo, setItemInfo] = useState({})
   const showInfo = (id) => {
@@ -47,25 +43,33 @@ function handleDel(id) {
     />
   ));
 
+
+
+  const [cart, setCart] = useState([])
+
+  function handleDel(id) {
+    setCart(current => [...current.filter((el) => el.id !== id)])
+  }
+
   useEffect(()=> {
     basketItems()
     sumTotal()
   }, [cart])
 
   const addItem = (itemId) => {
-     const check = () => cart.find(item => item[0].id===itemId ) 
-    //  console.log(check)
     const item = data.filter(el => el.id === itemId) 
-    if(cart.filter(el => el.id === itemId)===true) return
-      setCart(current => 
-        [...current, { 
-        img: item[0].img,
-        name: item[0].name,
-        price: item[0].price,
-        id: item[0].id,
-        handleDel: ()=> handleDel(item[0].id)
-     }])
-     console.log(cart)
+    if (cart.some(el => el.id === item[0].id)===true) return
+    else {
+      setCart(current => {
+        return [...current, { 
+          img: item[0].img,
+          name: item[0].name,
+          price: item[0].price,
+          id: item[0].id,
+          handleDel: ()=> handleDel(item[0].id)}]
+      })
+    }
+
 }
 const basketItems = () => cart.map((item) => {
   return (

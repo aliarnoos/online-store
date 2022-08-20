@@ -1,5 +1,6 @@
 import React from "react";
 import BasketBtn from "./Basket/BasketBtn";
+import { Link } from "react-router-dom";
 
 function ItemINfo(props) {
   return (
@@ -27,10 +28,11 @@ function ItemINfo(props) {
               <span>{props.item.display}</span>
             </li>
           </ul>
-          <button onClick={props.item.addItem}>Add to cart</button>
+          <Link to="/Basket">
+            <button onClick={props.item.addItem}>Add to cart</button>
+          </Link>
         </div>
       </div>
-      <BasketBtn />
     </>
   );
 }
