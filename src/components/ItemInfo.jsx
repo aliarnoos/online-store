@@ -33,6 +33,10 @@ function ItemINfo(props) {
           </Link>
         </div>
       </div>
+      <div className="f-products">
+        <h1>Featured Products</h1>
+        <div className="featured-itmes">{props.featuredItems}</div>
+      </div>
     </>
   );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Home() {
+function Home(props) {
   return (
     <>
       <div className="home-banner">
@@ -12,6 +12,10 @@ function Home() {
         <Link to="/Shop">
           <button>Shop Now</button>
         </Link>
+      </div>
+      <div className="f-products">
+        <h1>Featured Products</h1>
+        <div className="featured-itmes">{props.featuredItems}</div>
       </div>
     </>
   );

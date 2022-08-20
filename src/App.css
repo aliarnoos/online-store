@@ -137,6 +137,7 @@ nav ul a:hover {
   align-items: center;
   justify-content: center;
   color: #1d2d44;
+  margin-bottom: 100px;
 }
 .item-info .laptop-img {
   width: 500px;
@@ -224,9 +225,6 @@ nav ul a:hover {
   color: #fff;
 }
 
-.basket-items {
-  margin-top: 100px;
-}
 .basket-items table {
   margin-left: auto;
   margin-right: auto;
@@ -263,9 +261,8 @@ nav ul a:hover {
   background-color: transparent;
 }
 .basket-items table td button img {
-  width: 30px;
+  width: 26px;
   cursor: pointer;
-  opacity: 0.9;
 }
 .basket-items table input {
   width: 70px;
@@ -283,9 +280,11 @@ nav ul a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-height: 800px;
   gap: 20px;
 }
 .cart .back-btn {
+  margin-top: 30px;
   font-size: 14px;
   padding: 8px;
   color: #fff;
@@ -344,4 +343,88 @@ nav ul a:hover {
 }
 .pagination button:hover {
   background-color: #1d2d44;
+}
+
+.f-products {
+  margin: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+.f-products h1 {
+  font-size: 30px;
+  font-weight: bold;
+  color: #1d2d44;
+}
+.f-products .featured-itmes {
+  display: flex;
+  gap: 100px;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 10px;
+}
+.footer-icons img {
+  width: 30px;
+}
+
+.footer {
+  border-top: 4px solid #ff6b45;
+  background-color: #1d2d44;
+  padding: 20px;
+}
+.footer P {
+  text-align: center;
+  color: #fff;
+}
+
+.main-banner {
+  background-color: #ff6b45;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  padding-left: 200px;
+}
+.main-banner span {
+  font-size: 50px;
+  font-weight: bold;
+  color: #fff;
+  margin: 10px;
+}
+.main-banner a {
+  color: #fff;
+}
+.main-banner a:hover {
+  text-decoration: underline;
+}
+
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+.about img {
+  width: 800px;
+  margin: 20px;
+  border-radius: 4px;
+}
+.about .about-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  min-height: 200px;
+  max-width: 600px;
+}
+.about .about-text h1 {
+  font-size: 30px;
+}
+.about .about-text p {
+  line-height: 30px;
 }/*# sourceMappingURL=App.css.map */

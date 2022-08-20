@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Pagination from "./Pagination";
+import MainBanner from "./MainBanner";
 
 function Shop(props) {
   const [items, setItems] = useState(props.shopItems);
@@ -11,6 +12,7 @@ function Shop(props) {
   const currentItems = items.slice(firstItemtIndex, lastItemIndex);
   return (
     <div>
+      <MainBanner page={"Shop"} />
       <div className="items-grid">{currentItems}</div>
       <Pagination
         totalItems={items.length}

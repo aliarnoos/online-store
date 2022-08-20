@@ -10,6 +10,8 @@ import Basket from './components/Basket/Basket';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import BasketBtn from "./components/Basket/BasketBtn";
 import BasketItem from "./components/Basket/BasketItem";
+import Footer from './components/Footer';
+import About from './components/About';
 
 
 
@@ -43,6 +45,17 @@ function App() {
     />
   ));
 
+  const featuredData = data.slice(19,23)
+  const featuredItems = featuredData.map((item) => (
+    <ShopItem
+      key={item.id}
+      id={item.id}
+      name={item.name}
+      price={item.price}
+      img={item.img}
+      showInfo={()=>showInfo(item.id)}
+    />
+  ))
 
 
   const [cart, setCart] = useState([])
@@ -100,13 +113,14 @@ const sumTotal = () => {
       <BrowserRouter>
       <NavBar/>
         <Routes>
-          <Route path="/" exact element={<Home />} />
+          <Route path="/" exact element={<Home  featuredItems={featuredItems}/>} />
           <Route path="/Shop" exact element={<Shop shopItems={shopItems}  />} />
-          <Route path="/About" exact element={<Shop />} />
-          <Route path="/ItemInfo/:id" exact element={<ItemINfo item={itemInfo}/>} />
+          <Route path="/About" exact element={<About />} />
+          <Route path="/ItemInfo/:id" exact element={<ItemINfo item={itemInfo} featuredItems={featuredItems}/>} />
           <Route path="/Basket" exact element={<Basket  basketItems={basketItems} total={sumTotal} finalTotal={finalTotal}/>} />
         </Routes>
         <BasketBtn basketCount={cart.length} />
+        <Footer/>
       </BrowserRouter>
     </>
   );

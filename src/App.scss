@@ -142,6 +142,7 @@ nav {
     align-items: center;
     justify-content: center;
     color: $se-color;
+    margin-bottom: 100px;
     .laptop-img {
         width: 500px;
         margin: 30px;
@@ -230,8 +231,6 @@ nav {
     }
 }
 .basket-items {
-    margin-top: 100px;
-
   table {
     margin-left: auto;
     margin-right: auto;
@@ -265,9 +264,8 @@ nav {
                 border: none;
                 background-color: transparent;
                 img {
-                    width: 30px;
+                    width: 26px;
                     cursor: pointer;
-                    opacity: 0.9;
                 }
             }
         }
@@ -288,8 +286,10 @@ nav {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-height: 800px;
     gap: 20px;
     .back-btn {
+        margin-top: 30px;
         font-size: 14px;
         padding: 8px;
         color: $back-color;
@@ -346,6 +346,85 @@ nav {
         cursor: pointer;
         &:hover {
             background-color: $se-color;
+        }
+    }
+}
+.f-products {
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    h1 {
+        font-size: 30px;
+        font-weight: bold;
+        color: $se-color;
+    }
+    .featured-itmes {
+        display: flex;
+        gap: 100px;
+    }
+}
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 10px;
+    img {
+        width: 30px;
+    }
+}
+.footer {
+    border-top: 4px solid $main-color;
+    background-color: $se-color;
+    padding: 20px;
+    P {
+        text-align: center;
+        color: $back-color;
+    }
+}
+.main-banner {
+    background-color: $main-color;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    padding-left: 200px;
+    span {
+        font-size: 50px;
+        font-weight: bold;
+        color: $back-color;
+        margin: 10px;
+    }
+    a {
+        color: $back-color;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    img {
+        width: 800px;
+        margin: 20px;
+        border-radius: 4px;
+    }
+    .about-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        min-height: 200px;
+        max-width: 600px;
+        h1 {
+            font-size: 30px;
+        }
+        p {
+            line-height: 30px;
         }
     }
 }
