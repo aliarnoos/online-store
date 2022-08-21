@@ -12,34 +12,26 @@ function BasketItem(props) {
     return total;
   };
   return (
-    <tr>
-      <td>
+    <div className="cart-item">
+      <div className="item-header">
         <img src={props.img} alt="lap" />
         <h2>{props.name}</h2>
-      </td>
-      <td>
-        <h2>{props.price}</h2>
-      </td>
-      <td>
-        <input
-          type="number"
-          defaultValue={1}
-          className={props.id}
-          onChange={subTotalSum}
-          onClick={props.total}
-          min={1}
-          max={10}
-        />
-      </td>
-      <td>
-        <h2>{subTotal}</h2>
-      </td>
-      <td>
-        <button onClick={props.handleDel}>
-          <img src="/images/del-icon.svg" alt="delete" />
-        </button>
-      </td>
-    </tr>
+      </div>
+      <h2>{props.price}</h2>
+      <input
+        type="number"
+        defaultValue={1}
+        className={props.id}
+        onChange={subTotalSum}
+        onClick={props.total}
+        min={1}
+        max={10}
+      />
+      <h2>{subTotal}</h2>
+      <button onClick={props.handleDel}>
+        <img src="/images/del-icon.svg" alt="delete" />
+      </button>
+    </div>
   );
 }
 
