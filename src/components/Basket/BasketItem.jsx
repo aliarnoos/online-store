@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 function BasketItem(props) {
   const [subTotal, setSubTotal] = useState(props.price);

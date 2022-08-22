@@ -236,14 +236,14 @@ nav {
     margin-left: auto;
     margin-right: auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, 300px);
+    grid-template-columns: repeat(auto-fit, 200px);
 
     .cart-item {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 30px;
+        gap: 20px;
         .item-header {
             display: flex;
             flex-direction: column;

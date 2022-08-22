@@ -1,8 +1,10 @@
-import React from "react";
-import BasketBtn from "./Basket/BasketBtn";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function ItemINfo(props) {
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }, [props.item]);
   return (
     <>
       <div className="item-info">

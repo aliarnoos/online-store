@@ -232,14 +232,14 @@ nav ul a:hover {
   margin-left: auto;
   margin-right: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, 300px);
+  grid-template-columns: repeat(auto-fit, 200px);
 }
 .basket-items .cart-item {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  gap: 20px;
 }
 .basket-items .cart-item .item-header {
   display: flex;
