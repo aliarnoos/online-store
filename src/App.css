@@ -30,12 +30,24 @@ a {
 }
 
 nav {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 14px;
   box-shadow: 1px 2px 20px -14px;
   max-width: 100%;
+}
+nav .mobile-menu-btn {
+  position: absolute;
+  right: 12px;
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  display: none;
+}
+nav .mobile-menu-btn img {
+  width: 36px;
 }
 nav img {
   width: 200px;
@@ -47,6 +59,9 @@ nav ul {
   gap: 40px;
   font-size: 18px;
   color: #1d2d44;
+}
+nav ul li {
+  display: block;
 }
 nav ul a {
   transition: color 0.2s ease-out;
@@ -476,19 +491,31 @@ nav ul a:hover {
 }
 @media (max-width: 650px) {
   nav {
-    padding: 20px;
+    padding: 16px;
+    flex-direction: column;
+    align-items: flex-start;
   }
-  nav img {
-    width: 120px;
+  nav fl img {
+    width: 180px;
   }
-  nav ul {
-    gap: 20px;
+  nav .nav-links {
+    padding-top: 20px;
+    width: 100%;
   }
-  nav ul li {
-    font-size: 16px;
+  nav .nav-links ul {
+    display: none;
+    width: 100%;
+    flex-direction: column;
   }
-  nav ul li a {
-    padding-block: 30px;
+  nav .nav-links li {
+    text-align: center;
+  }
+  nav .nav-links ul.active {
+    gap: w0px;
+    display: flex;
+  }
+  nav .mobile-menu-btn {
+    display: inline-block;
   }
   .home-banner {
     max-width: 100%;
