@@ -504,7 +504,6 @@ nav {
 //MOBILE
 @media  (max-width: 650px) {
     nav  {
-        padding: 16px;
         flex-direction: column;
         align-items: flex-start;
         fl
@@ -524,7 +523,7 @@ nav {
                 text-align: center;
             }
             ul.active {
-                gap: w0px;
+                gap: 18px;
                 display: flex;
             }
         }

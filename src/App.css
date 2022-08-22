@@ -491,7 +491,6 @@ nav ul a:hover {
 }
 @media (max-width: 650px) {
   nav {
-    padding: 16px;
     flex-direction: column;
     align-items: flex-start;
   }
@@ -511,7 +510,7 @@ nav ul a:hover {
     text-align: center;
   }
   nav .nav-links ul.active {
-    gap: w0px;
+    gap: 18px;
     display: flex;
   }
   nav .mobile-menu-btn {
