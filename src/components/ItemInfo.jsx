@@ -30,9 +30,7 @@ function ItemINfo(props) {
               <span>{props.item.display}</span>
             </li>
           </ul>
-          <Link to="/Basket">
-            <button onClick={props.item.addItem}>Add to cart</button>
-          </Link>
+          <button onClick={props.item.addItem}>Add to cart</button>
         </div>
       </div>
       <div className="f-products">

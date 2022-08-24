@@ -12,10 +12,34 @@ import BasketBtn from "./components/Basket/BasketBtn";
 import BasketItem from "./components/Basket/BasketItem";
 import Footer from './components/Footer';
 import About from './components/About';
+import Loading from './components/Loading';
 
+
+import { initializeApp } from "firebase/app";
+import {
+  getFirestore, collection, onSnapshot,
+  addDoc, deleteDoc, doc, setDoc, getDocs
+} from 'firebase/firestore'
+const firebaseConfig = {
+  apiKey: "AIzaSyBk9ZgVjEu_zZLY4unQ_401RbpqTg9XoNY",
+  authDomain: "new-laptop-store.firebaseapp.com",
+  projectId: "new-laptop-store",
+  storageBucket: "new-laptop-store.appspot.com",
+  messagingSenderId: "307802676707",
+  appId: "1:307802676707:web:0981a953aa9099166194d6"
+};
 
 
 function App() {
+
+  const [isLoading, setIsLoading] = useState(false)
+
+const app = initializeApp(firebaseConfig);
+
+const db = getFirestore()
+
+const colRef = collection(db, 'cart')
+
 
 
   const [itemInfo, setItemInfo] = useState({})
@@ -57,21 +81,20 @@ function App() {
     />
   ))
 
-
   const [cart, setCart] = useState([])
 
   function handleDel(id) {
+    const docRef = doc(db, 'cart', id)
+    deleteDoc(docRef)
     setCart(current => [...current.filter((el) => el.id !== id)])
+
   }
 
-  useEffect(()=> {
-    basketItems()
-    sumTotal()
-  }, [cart])
 
   const addItem = (itemId) => {
+    setIsLoading(true)
     const item = data.filter(el => el.id === itemId) 
-    if (cart.some(el => el.id === item[0].id)===true) return
+    if (cartDb.some(el => el.id === item[0].id)===true) return
     else {
       setCart(current => {
         return [...current, { 
@@ -79,12 +102,54 @@ function App() {
           name: item[0].name,
           price: item[0].price,
           id: item[0].id,
-          handleDel: ()=> handleDel(item[0].id)}]
+          handleDel: ()=> handleDel()}]
       })
+       setDoc(doc(db, "cart", item[0].id), {
+        img: item[0].img,
+        name: item[0].name,
+        price: item[0].price,
+        id: item[0].id
+      });
+      setIsLoading(false)
     }
-
 }
-const basketItems = () => cart.map((item) => {
+  // onSnapshot(colRef, (snapshot) => {
+  //   snapshot.docs.forEach(doc => {
+  //     cartDb.push({ ...doc.data(), id: doc.id })
+  //   })
+  // })
+
+const [cartDb, setCartDb] = useState([])
+
+useEffect(()=> {
+  sumTotal()
+}, [cartDb])
+
+  async function getCartDb () {
+    setIsLoading(true)
+    await getDocs(colRef)
+    .then(snapshot => {
+      // console.log(snapshot.docs)
+       setCartDb([])
+      snapshot.docs.forEach(doc => {
+        setCartDb (current => [...current,  {...doc.data()}])
+      })
+      console.log(cartDb)
+    }) 
+    // .then(basketItems())
+    .catch(err => {
+      console.log(err.message)
+    })
+    setIsLoading(false)
+  }
+useEffect(()=> {
+getCartDb()
+},[cart] )
+
+// useEffect(()=>{
+//   basketItemsDb()
+// },[])
+ const basketItems = () =>  cartDb.map((item) => {
   return (
     <BasketItem
       name={item.name}
@@ -92,15 +157,29 @@ const basketItems = () => cart.map((item) => {
       price={item.price}
       key={item.id}
       id={item.id}
-      handleDel={item.handleDel}
+      handleDel={()=>handleDel(item.id)}
       total={sumTotal}
     />
   );
 });
+
+// const basketItems = () => cartDb.map((item) => {
+//   return (
+//     <BasketItem
+//       name={item.name}
+//       img={item.img}
+//       price={item.price}
+//       key={item.id}
+//       id={item.id}
+//       handleDel={()=>handleDel(item.id)}
+//       total={sumTotal}
+//     />
+//   );
+// });
  const [finalTotal, setFinalTotal] = useState()
 const sumTotal = () => {
   let total = 0
-  cart.map((item) => {
+  cartDb.map((item) => {
     let price = parseInt(item.price.replace(/\W+/g, ''))
     let quant = document.querySelector(`.${item.id}`) || 1;
     if(document.querySelector(`.${item.id}`)) total += price* quant.value
@@ -108,6 +187,9 @@ const sumTotal = () => {
   })
   setFinalTotal('$'+ total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')) 
 }
+
+
+
   return (
     <>
       <BrowserRouter>
@@ -117,9 +199,10 @@ const sumTotal = () => {
           <Route path="/Shop" exact element={<Shop shopItems={shopItems}  />} />
           <Route path="/About" exact element={<About />} />
           <Route path="/ItemInfo/:id" exact element={<ItemINfo item={itemInfo} featuredItems={featuredItems}/>} />
-          <Route path="/Basket" exact element={<Basket  basketItems={basketItems} total={sumTotal} finalTotal={finalTotal}/>} />
+          <Route path="/Basket" exact element={isLoading===false && <Basket  basketItems={basketItems} total={sumTotal} finalTotal={finalTotal}/>  ||  isLoading && <Loading/> } />
         </Routes>
-        <BasketBtn basketCount={cart.length} />
+        {/* <button onClick={ItemToDB}>test</button> */}
+        <BasketBtn basketCount={cartDb.length} />
         <Footer/>
       </BrowserRouter>
     </>
