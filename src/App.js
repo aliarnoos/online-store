@@ -17,8 +17,8 @@ import Loading from './components/Loading';
 
 import { initializeApp } from "firebase/app";
 import {
-  getFirestore, collection, onSnapshot,
-  addDoc, deleteDoc, doc, setDoc, getDocs
+  getFirestore, collection,
+  deleteDoc, doc, setDoc, getDocs
 } from 'firebase/firestore'
 const firebaseConfig = {
   apiKey: "AIzaSyBk9ZgVjEu_zZLY4unQ_401RbpqTg9XoNY",
@@ -32,15 +32,10 @@ const firebaseConfig = {
 
 function App() {
 
-  const [isLoading, setIsLoading] = useState(false)
-
-const app = initializeApp(firebaseConfig);
-
+const [isLoading, setIsLoading] = useState(false)
+initializeApp(firebaseConfig);
 const db = getFirestore()
-
 const colRef = collection(db, 'cart')
-
-
 
   const [itemInfo, setItemInfo] = useState({})
   const showInfo = (id) => {
@@ -89,8 +84,6 @@ const colRef = collection(db, 'cart')
     setCart(current => [...current.filter((el) => el.id !== id)])
 
   }
-
-
   const addItem = (itemId) => {
     setIsLoading(true)
     const item = data.filter(el => el.id === itemId) 
@@ -113,30 +106,17 @@ const colRef = collection(db, 'cart')
       setIsLoading(false)
     }
 }
-  // onSnapshot(colRef, (snapshot) => {
-  //   snapshot.docs.forEach(doc => {
-  //     cartDb.push({ ...doc.data(), id: doc.id })
-  //   })
-  // })
-
 const [cartDb, setCartDb] = useState([])
-
-useEffect(()=> {
-  sumTotal()
-}, [cartDb])
 
   async function getCartDb () {
     setIsLoading(true)
     await getDocs(colRef)
     .then(snapshot => {
-      // console.log(snapshot.docs)
        setCartDb([])
       snapshot.docs.forEach(doc => {
         setCartDb (current => [...current,  {...doc.data()}])
       })
-      console.log(cartDb)
     }) 
-    // .then(basketItems())
     .catch(err => {
       console.log(err.message)
     })
@@ -144,11 +124,9 @@ useEffect(()=> {
   }
 useEffect(()=> {
 getCartDb()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
 },[cart] )
 
-// useEffect(()=>{
-//   basketItemsDb()
-// },[])
  const basketItems = () =>  cartDb.map((item) => {
   return (
     <BasketItem
@@ -163,33 +141,21 @@ getCartDb()
   );
 });
 
-// const basketItems = () => cartDb.map((item) => {
-//   return (
-//     <BasketItem
-//       name={item.name}
-//       img={item.img}
-//       price={item.price}
-//       key={item.id}
-//       id={item.id}
-//       handleDel={()=>handleDel(item.id)}
-//       total={sumTotal}
-//     />
-//   );
-// });
  const [finalTotal, setFinalTotal] = useState()
 const sumTotal = () => {
   let total = 0
   cartDb.map((item) => {
     let price = parseInt(item.price.replace(/\W+/g, ''))
     let quant = document.querySelector(`.${item.id}`) || 1;
-    if(document.querySelector(`.${item.id}`)) total += price* quant.value
-    else total += price * quant
+    if(document.querySelector(`.${item.id}`)) return total += price* quant.value
+    else return total += price * quant
   })
   setFinalTotal('$'+ total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')) 
 }
-
-
-
+useEffect(()=> {
+  sumTotal()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [cartDb])
   return (
     <>
       <BrowserRouter>
@@ -199,9 +165,8 @@ const sumTotal = () => {
           <Route path="/Shop" exact element={<Shop shopItems={shopItems}  />} />
           <Route path="/About" exact element={<About />} />
           <Route path="/ItemInfo/:id" exact element={<ItemINfo item={itemInfo} featuredItems={featuredItems}/>} />
-          <Route path="/Basket" exact element={isLoading===false && <Basket  basketItems={basketItems} total={sumTotal} finalTotal={finalTotal}/>  ||  isLoading && <Loading/> } />
+          <Route path="/Basket" exact element={(isLoading===false && <Basket  basketItems={basketItems} total={sumTotal} finalTotal={finalTotal}/> ) ||  (isLoading && <Loading/>) } />
         </Routes>
-        {/* <button onClick={ItemToDB}>test</button> */}
         <BasketBtn basketCount={cartDb.length} />
         <Footer/>
       </BrowserRouter>
