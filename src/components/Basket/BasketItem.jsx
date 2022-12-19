@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 function BasketItem(props) {
   const [subTotal, setSubTotal] = useState(props.price);
+  const inputRef = useRef(null);
+
   const subTotalSum = () => {
-    const quant = document.querySelector(`.${props.id}`);
+    // const quant = document.querySelector(`.${props.id}`).value;
     let itemPrice = parseInt(props.price.replace(/\W+/g, ""));
-    let total = (quant.value * itemPrice)
+    let total = (inputRef.current.value * itemPrice)
       .toString()
       .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     setSubTotal("$" + total);
@@ -23,7 +25,8 @@ function BasketItem(props) {
         defaultValue={1}
         className={props.id}
         onChange={subTotalSum}
-        // onClick={props.total}
+        ref={inputRef}
+        onClick={() => props.sumTotal(inputRef.current.value)}
         min={1}
         max={10}
       />
