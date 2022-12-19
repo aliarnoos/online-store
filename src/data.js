@@ -27,7 +27,7 @@ const generateId = () => {
 
 export const data = [
   {
-    id: generateId(),
+    id: "01",
     name: 'GX550LXS',
     gpu: rtxGpu1,
     cpu: intel9Cpu10,
@@ -39,7 +39,7 @@ export const data = [
   },
 
   {
-    id: generateId(),
+    id: "02",
     name: 'GX531GXR-ES012R',
     gpu: rtxGpu1,
     cpu: intel7Cpu9,
@@ -50,7 +50,7 @@ export const data = [
       'https://images-na.ssl-images-amazon.com/images/I/81On9Y2yByL._AC_SL1500_.jpg',
   },
   {
-    id: generateId(),
+    id: "03",
     name: 'GX502LXS-HF066R',
     gpu: rtxGpu1,
     cpu: intel7Cpu10,
@@ -61,7 +61,7 @@ export const data = [
       'https://images-na.ssl-images-amazon.com/images/I/81JZdgi17vL._AC_SL1500_.jpg',
   },
   {
-    id: generateId(),
+    id: "04",
     name: 'GX701LXS-XS78',
     gpu: rtxGpu1,
     cpu: intel7Cpu10,
@@ -72,7 +72,7 @@ export const data = [
       'https://images-na.ssl-images-amazon.com/images/I/81sFhq2FSuL._AC_SL1500_.jpg',
   },
   {
-    id: generateId(),
+    id: "05",
     name: 'ROG Zephyrus Duo 15',
     gpu: rtxGpuSuper,
     cpu: intel7Cpu10,
@@ -83,7 +83,7 @@ export const data = [
       'https://images-na.ssl-images-amazon.com/images/I/81Cb9QNSyGL._AC_SX466_.jpg',
   },
   {
-    id: generateId(),
+    id: "06",
     name: 'GX701GWR',
     gpu: rtxGpuSuper,
     cpu: intel7Cpu10,
@@ -93,7 +93,7 @@ export const data = [
     img: 'https://cdn.mwave.com.au/images/400/AC24007_1.jpg',
   },
   {
-    id: generateId(),
+    id: "07",
     name: 'GX701GX',
     gpu: rtxGpu1,
     cpu: intel7Cpu10,
@@ -104,7 +104,7 @@ export const data = [
       'https://images-na.ssl-images-amazon.com/images/I/41QveeKrBGL._AC_.jpg',
   },
   {
-    id: generateId(),
+    id: "08",
     name: 'GX502GV',
     gpu: rtxGpuSuper,
     cpu: intel7Cpu10,
@@ -114,7 +114,7 @@ export const data = [
     img: 'https://www.excaliberpc.com/images/728623_1/large.jpg',
   },
   {
-    id: generateId(),
+    id: "09",
     name: 'ROG Zephyrus M GU502',
     gpu: rtxGpu2,
     cpu: intel7Cpu10,
@@ -125,7 +125,7 @@ export const data = [
       'https://www.notebookcheck.net/uploads/tx_nbc2/ASUSZephyrusMGU502GU__1_.jpg',
   },
   {
-    id: generateId(),
+    id: "10",
     name: 'ROG Strix SCAR 15',
     gpu: rtxGpuSuper,
     cpu: intel9Cpu10,
@@ -136,7 +136,7 @@ export const data = [
       'https://images-na.ssl-images-amazon.com/images/I/71VOUtLV5UL._AC_SL1500_.jpg',
   },
   {
-    id: generateId(),
+    id: "11",
     name: 'ROG Strix SCAR III',
     gpu: gtxGpu,
     cpu: intel7Cpu9,
@@ -147,7 +147,7 @@ export const data = [
       'https://images-na.ssl-images-amazon.com/images/I/81acyeSEDeL._SX466_.jpg',
   },
   {
-    id: generateId(),
+    id: "12",
     name: 'ROG Strix G17',
     gpu: rtxGpu2,
     cpu: intel7Cpu10,
@@ -158,7 +158,7 @@ export const data = [
       'https://i0.wp.com/toptechkh.com/wp-content/uploads/2020/08/Glacier-Blue.jpg?fit=500%2C500&ssl=1',
   },
   {
-    id: generateId(),
+    id: "13",
     name: 'ROG Strix G',
     gpu: gtxGpu,
     cpu: intel7Cpu9,
@@ -170,7 +170,7 @@ export const data = [
       'https://images-na.ssl-images-amazon.com/images/I/71mYNdzMdUL._AC_SL1500_.jpg',
   },
   {
-    id: generateId(),
+    id: "14",
     name: 'ROG Mothership GZ700GX',
     gpu: rtxGpu1,
     cpu: '9th Gen Intel® Core™ i9',
@@ -182,18 +182,7 @@ export const data = [
       'https://images-na.ssl-images-amazon.com/images/I/81JJ4fGmNhL._AC_SL1500_.jpg',
   },
   {
-    id: generateId(),
-    name: 'ROG Zephyrus G14',
-    gpu: gtxGpu,
-    cpu: 'AMD® Ryzen™ 9',
-    display: displaySm,
-    storage: ssd,
-    price: '$1,599',
-    img:
-      'https://images-na.ssl-images-amazon.com/images/I/61vu2vxYAGL._AC_SX466_.jpg',
-  },
-  {
-    id: generateId(),
+    id: "15",
     name: 'ROG Zephyrus M15',
     gpu: gtxGpu,
     cpu: intel7Cpu10,
@@ -204,7 +193,7 @@ export const data = [
       'https://images-na.ssl-images-amazon.com/images/I/61SXhnIUFOL._AC_SL1080_.jpg',
   },
   {
-    id: generateId(),
+    id: "16",
     name: 'TUF Gaming F15',
     gpu: gtxGpu,
     cpu: intel7Cpu10,
@@ -215,7 +204,7 @@ export const data = [
       'https://images-na.ssl-images-amazon.com/images/I/914o5xV1%2B8L._SL1500_.jpg',
   },
   {
-    id: generateId(),
+    id: "17",
     name: 'ALIENWARE M17 R3',
     gpu: rtxGpu2,
     cpu: intel7Cpu10,
@@ -226,7 +215,7 @@ export const data = [
       'https://images-na.ssl-images-amazon.com/images/I/71hhY4ikVwL._AC_SL1500_.jpg',
   },
   {
-    id: generateId(),
+    id: "18",
     name: 'ALIENWARE M15 R3',
     gpu: rtxGpu2,
     cpu: intel7Cpu10,
@@ -237,7 +226,7 @@ export const data = [
       'https://i.dell.com/is/image/DellContent//content/dam/global-site-design/product_images/dell_client_products/notebooks/alienware_notebooks/alienware_m15_r3/pdp/alienware-m15-r3-laptop-pdp.png?fmt=jpg&wid=570&hei=400',
   },
   {
-    id: generateId(),
+    id: "19",
     name: 'ALIENWARE AREA-51M R2',
     gpu: 'GeForce RTX™ 2080 SUPER',
     cpu: intel9Cpu10,
@@ -248,7 +237,7 @@ export const data = [
       'https://i.dell.com/sites/csimages/Video_Imagery/all/alienware-area-51m-r2-2020-thumb.jpg',
   },
   {
-    id: generateId(),
+    id: "20",
     name: 'GT76 Titan 10SF',
     gpu: rtxGpu2,
     cpu: intel9Cpu10,
@@ -258,7 +247,7 @@ export const data = [
     img: 'https://www.laptoparena.net/images/MSI_Gaming_GT76_88ff9a.jpg',
   },
   {
-    id: generateId(),
+    id: "21",
     name: 'GS75 Stealth 10SE',
     gpu: rtxGpu3,
     cpu: intel7Cpu10,
@@ -269,7 +258,7 @@ export const data = [
       'https://images-na.ssl-images-amazon.com/images/I/710pmUkw2rL._AC_SL1500_.jpg',
   },
   {
-    id: generateId(),
+    id: "22",
     name: 'GS66 Stealth 10SD',
     gpu: gtxGpu,
     cpu: intel7Cpu10,
@@ -280,7 +269,7 @@ export const data = [
       'https://asset.msi.com/resize/image/global/product/product_3_20200311103035_5e684d4b13299.png62405b38c58fe0f07fcef2367d8a9ba1/380.png',
   },
   {
-    id: generateId(),
+    id: "23",
     name: 'GE75 Raider 10SFS',
     gpu: rtxGpuSuper,
     cpu: intel9Cpu10,
@@ -291,7 +280,7 @@ export const data = [
       'https://images-na.ssl-images-amazon.com/images/I/81YOhSzeYtL._AC_SL1500_.jpg',
   },
   {
-    id: generateId(),
+    id: "24",
     name: 'GP75 Leopard 10SFSK',
     gpu: rtxGpuSuper,
     cpu: intel7Cpu10,
@@ -302,7 +291,7 @@ export const data = [
       'https://cdn.shopify.com/s/files/1/0228/7629/1136/products/GP75Leopard_1_ea3ee74c-13f6-43af-a856-abf5206a6522_2000x.png?v=1599589880',
   },
   {
-    id: generateId(),
+    id: "25",
     name: 'GF75 Thin 10SE',
     gpu: rtxGpu3,
     cpu: intel7Cpu10,
@@ -313,7 +302,7 @@ export const data = [
       'https://asset.msi.com/resize/image/global/product/product_8_20200319093839_5e72cd1f6d8a0.png62405b38c58fe0f07fcef2367d8a9ba1/1024.png',
   },
   {
-    id: generateId(),
+    id: "26",
     name: 'GX531GX-ES047R',
     gpu: rtxGpu1,
     cpu: intel7Cpu8,
@@ -323,4 +312,15 @@ export const data = [
     img:
       'https://dlcdnwebimgs.asus.com/gain/C5B7C2B1-A0AB-4FFB-ACE9-D6B007E34504',
   },
+  {
+    id: "27",
+    name: 'ROG Zephyrus G14',
+    gpu: gtxGpu,
+    cpu: 'AMD® Ryzen™ 9',
+    display: displaySm,
+    storage: ssd,
+    price: '$1,599',
+    img:
+      'https://images-na.ssl-images-amazon.com/images/I/61vu2vxYAGL._AC_SX466_.jpg',
+  }
 ]

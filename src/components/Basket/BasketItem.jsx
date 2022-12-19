@@ -23,7 +23,7 @@ function BasketItem(props) {
         defaultValue={1}
         className={props.id}
         onChange={subTotalSum}
-        onClick={props.total}
+        // onClick={props.total}
         min={1}
         max={10}
       />
