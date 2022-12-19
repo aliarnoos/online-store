@@ -143,17 +143,17 @@ getCartDb()
 
  const [finalTotal, setFinalTotal] = useState()
 const sumTotal = () => {
-  let total = 0
-  cartDb.map((item) => {
-    let price = parseInt(item.price.replace(/\W+/g, ''))
-    let quant = document.querySelector(`.${item.id}`) || 1;
-    if(document.querySelector(`.${item.id}`)) return total += price* quant.value
-    else return total += price * quant
-  })
-  setFinalTotal('$'+ total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')) 
+  // let total = 0
+  // cartDb.map((item) => {
+  //   let price = parseInt(item.price)
+  //   let quant = document.querySelector(`.${item.id}`) || 1;
+  //   if(document.querySelector(`.${item.id}`)) return total += price* quant.value
+  //   else return total += price * quant
+  // })
+  // setFinalTotal('$'+ total.toString()) 
 }
 useEffect(()=> {
-  sumTotal()
+  // sumTotal()
   // eslint-disable-next-line react-hooks/exhaustive-deps
 }, [cartDb])
   return (
