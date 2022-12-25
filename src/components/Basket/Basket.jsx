@@ -11,7 +11,7 @@ function Basket(props) {
       <div className="cart">
         <div className="basket-items">{basket}</div>
         <div className="cart-total">
-          <h1>Cart Totoal: {props.finalTotal}</h1>
+          {/* <h1>Cart Totoal: {props.finalTotal}</h1> */}
           <button>Checkout</button>
           <Link to="/Shop">
             <button className="back-btn">Continue Shopping</button>
